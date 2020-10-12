@@ -1,0 +1,5 @@
+INCLUDE_DIRECTORIES(/tmp/t3/usr/include/hello)
+LINK_DIRECTORIES(/tmp/t3/usr/lib)
+ADD_EXECUTABLE(main main.cpp)
+TARGET_LINK_LIBRARIES(main libhello.so)
+SET(EXECUTABLE_OUTPUT_PATH ${NEWHELLO_BINARY_DIR}/bin)

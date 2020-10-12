@@ -1,0 +1,31 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/src/t4",
+    //"cmake.installPrefix": "/tmp/t3/usr",
+    "cmake.buildBeforeRun": true,
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "/home/anoldfriend/Workspace/MyRepo/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    },
+    // "clang-tidy.buildPath": "${workspaceFolder}/build",// wrong,clang-tidy.buildPath donot support variables like ${workspaceFolder}.
+    // https://github.com/notskm/vscode-clang-tidy/issues/39
+    //   it seems you can use relative paths as a workaround. So instead of ${workspaceFolder}/build you can use build.
+    "clang-tidy.buildPath": "build",
+    // it seems the .clang-tidy is not consumed by clang-tidy extensiosn 
+    "clang-tidy.checks": [
+        "clang-diagnostic-*",
+        "clang-analyzer-*",
+        "readability-*",
+        "modernize-*",
+        "-modernize-deprecated-headers",
+        "-modernize-use-trailing-return-type"
+    ],
+
+    //// If you not set the build path, you can also use the compilerArgs to add include dirfor clang - tidy to avoid the include error from clang - tidy 
+    // "clang-tidy.compilerArgs": [
+    //     "-I",
+    //     "/tmp/t3/usr/include/hello"
+    // ],
+
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+
+}
